@@ -20,11 +20,15 @@ $ npm start or yarn start
 - [chai-like](https://www.npmjs.com/package/chai-like)
 - [chai-things](https://www.chaijs.com/plugins/chai-things/)
 - [mocha](https://mochajs.org/)
+- [nyc](https://www.npmjs.com/package/nyc)
 
 # Backend Dependencies
 - [express](https://www.express.com/)
 
 # Deployment
+- 
+
+# Documentation
 
 # License
 ```
