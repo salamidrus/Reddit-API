@@ -26,10 +26,10 @@ $ npm start or yarn start
 - [express](https://www.express.com/)
 
 # Deployment
-- 
+- [Reddit Heroku](https://reddit-in.herokuapp.com/test)
 
 # Documentation
--
+- [Reddit Documentation](https://documenter.getpostman.com/view/6658461/S1Lr5XDt#2b35ee8a-93ec-48cd-a8bd-f012aa714301)
 
 # License
 ```
