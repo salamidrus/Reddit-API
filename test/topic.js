@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-expressions */
+
 const chai = require('chai');
 
 const { expect } = chai;
@@ -13,9 +14,10 @@ chai.use(chaiHttp);
 chai.use(chaiLike);
 chai.use(chaiThings);
 
-const i = 0;
+const i = 0; // for index Upvote and Downvote
 
-mocha.describe('Topic Routes', () => {
+
+mocha.describe('Http Topic Routes', () => {
   mocha.it('Create function Success', (done) => {
     chai.request(app)
       .post('/create')
@@ -25,9 +27,9 @@ mocha.describe('Topic Routes', () => {
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('create').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
-        expect(res.body).to.have.property('create').to.be.an('array').that.contains.something.like({ upVote: 0 });
-        expect(res.body).to.have.property('create').to.be.an('array').that.contains.something.like({ downVote: 0 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ upVote: 0 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ downVote: 0 });
         done();
       });
   });
@@ -39,7 +41,7 @@ mocha.describe('Topic Routes', () => {
       })
       .end((err, res) => {
         expect(err).to.be.null;
-        expect(res.body).to.have.property('create').that.equal('Maximum characters for creating topic is 255 characters');
+        expect(res.body).to.have.property('alert').that.equal('Maximum characters for creating topic is 255 characters');
         done();
       });
   });
@@ -49,9 +51,9 @@ mocha.describe('Topic Routes', () => {
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('show').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
-        expect(res.body).to.have.property('show').to.be.an('array').that.contains.something.like({ upVote: 0 });
-        expect(res.body).to.have.property('show').to.be.an('array').that.contains.something.like({ downVote: 0 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ upVote: 0 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ downVote: 0 });
         done();
       });
   });
@@ -61,9 +63,9 @@ mocha.describe('Topic Routes', () => {
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('upvote').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
-        expect(res.body).to.have.property('upvote').to.be.an('array').that.contains.something.like({ upVote: 1 });
-        expect(res.body).to.have.property('upvote').to.be.an('array').that.contains.something.like({ downVote: 0 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ upVote: 1 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ downVote: 0 });
         done();
       });
   });
@@ -73,9 +75,9 @@ mocha.describe('Topic Routes', () => {
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('downvote').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
-        expect(res.body).to.have.property('downvote').to.be.an('array').that.contains.something.like({ upVote: 1 });
-        expect(res.body).to.have.property('downvote').to.be.an('array').that.contains.something.like({ downVote: 1 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ name: 'Topic Sample' });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ upVote: 1 });
+        expect(res.body).to.have.property('data').to.be.an('array').that.contains.something.like({ downVote: 1 });
         done();
       });
   });
