@@ -20,6 +20,7 @@ exports.create = (req, res) => {
     });
   }
   data.push(Topic);
+  localStorage.setItem('topic', data);
 
   return res.json({
     data,
