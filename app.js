@@ -13,6 +13,6 @@ app.get('/test', (req, res) => {
 
 app.use('/', topicRoutes);
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
 
 module.exports = app;
