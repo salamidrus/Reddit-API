@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send('Welcome to sampan API!');
+  res.send('Welcome to Reddit API!');
 });
 
 app.use('/', topicRoutes);
