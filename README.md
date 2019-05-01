@@ -26,8 +26,6 @@ $ npm start or yarn start
 
 # Deployment
 
-# Postman
-
 # License
 ```
 Copyright <2019> <M Idrus Salam>
