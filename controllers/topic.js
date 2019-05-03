@@ -1,18 +1,20 @@
 /* eslint-disable no-console */
 // const Topic = require('../models/topic').topic;
 
-const data = [{
-  name: 'Topic Sample',
-  upVote: 0,
-  downVote: 0,
-}]; // Sample topic
+const data = [
+  {
+    name: 'Topic Sample',
+    upVote: 0,
+    downVote: 0,
+  },
+]; // Sample topic
 
 exports.create = (req, res) => {
   const Topic = {};
   Topic.upVote = 0;
   Topic.downVote = 0;
   Topic.name = req.body.name;
-  const isLength = (Topic.name.length <= 255); // max length for topic name is 255 characters
+  const isLength = Topic.name.length <= 255; // max length for topic name is 255 characters
   const alert = 'Maximum characters for creating topic is 255 characters';
   if (!isLength) {
     return res.json({
@@ -20,7 +22,6 @@ exports.create = (req, res) => {
     });
   }
   data.push(Topic);
-  localStorage.setItem('topic', data);
 
   return res.json({
     data,
@@ -48,7 +49,7 @@ exports.downVote = (req, res) => {
 exports.show = (req, res) => {
   // get all topics sorting descending by upVote
 
-  data.sort((a, b) => (b.upVote - a.upVote)); // Sort by Upvote Descending
+  data.sort((a, b) => b.upVote - a.upVote); // Sort by Upvote Descending
 
   res.json({
     data: data.slice(0, 20), // Limit showed data to 20 datas;
