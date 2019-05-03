@@ -51,6 +51,6 @@ exports.show = (req, res) => {
   data.sort((a, b) => (b.upVote - a.upVote)); // Sort by Upvote Descending
 
   res.json({
-    data: data.slice(0, 20), // Limit showed data to 20 data;
+    data: data.slice(0, 20), // Limit showed data to 20 datas;
   });
 };
