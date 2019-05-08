@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-// const Topic = require('../models/topic').topic;
 
 const data = [
   {
